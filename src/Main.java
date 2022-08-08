@@ -9,10 +9,11 @@ public class Main {
         int cappuccinoMilkRequired = 60;
         int cappuccinoCoffeeRequired = 15;
 
-        if (coffeeAmount >= cappuccinoCoffeeRequired) {
-            System.out.println("Р“РѕС‚РѕРІРёРј РєР°РїСѓС‡РёРЅРѕ");
+        if (coffeeAmount >= cappuccinoCoffeeRequired &&
+            milkAmount >= cappuccinoMilkRequired) {
+            System.out.println("Готовим капучино");
         } else {
-            System.out.println("РљРѕС„Рµ РЅРµРґРѕСЃС‚Р°С‚РѕС‡РЅРѕ :(");
+            System.out.println("Ингридиентов недостаточно :(");
         }
     }
 }
