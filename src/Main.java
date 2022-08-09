@@ -18,32 +18,35 @@ public class Main {
 
         boolean coffeeIsEnough = coffeeAmount >= cappuccinoCoffeeRequired;
 
+        boolean hasErrors = false;
+
 // 2.6 Вложенные условия
 
         if (isBlocked) {
             System.out.println("Кофемашина заблокирована");
-        } else {
-            if (coffeeIsEnough && milkIsEnough) {
-                System.out.println("Готовим кофе");
-            }
-
-            if (!coffeeIsEnough) {
-                System.out.println("Кофе недостаточно :(");
-            }
-
-            if (!coffeeIsEnough) {
-                System.out.println("Молока недостаточно :(");
-            }
+            hasErrors = true;
         }
+        if (!coffeeIsEnough) {
+            System.out.println("Кофе недостаточно :(");
+            hasErrors = true;
         }
+        if (!milkIsEnough) {
+            System.out.println("Молока недостаточно :(");
+            hasErrors = true;
+        }
+
+        if (!hasErrors) {
+            System.out.println("Готовим кофе");
+        }
+    }
+}
 // с использованием переменных
         //if (!isBlocked && coffeeIsEnough && milkIsEnough) {
         //    System.out.println("Готовим кофе");
         //} else {
         //    System.out.println("Что-то пошло не так :(");
         //}
-    }
-}
+
 // 2.5 Приоритеты и скобки в условиях
 //if (!isBlocked && coffeeAmount >= cappuccinoCoffeeRequired &&
 //    (skimmedMilkAmount >= cappuccinoMilkRequired ||
