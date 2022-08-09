@@ -13,14 +13,26 @@ public class Main {
         int cappuccinoMilkRequired = 60;
         int cappuccinoCoffeeRequired = 15;
 
-        // 2.5 Приоритеты и скобки в условиях
-        if (!isBlocked && coffeeAmount >= cappuccinoCoffeeRequired &&
-            (skimmedMilkAmount >= cappuccinoMilkRequired ||
-            milkAmount >= cappuccinoMilkRequired)) {
+        boolean milkIsEnough = skimmedMilkAmount >= cappuccinoMilkRequired ||
+                milkAmount >= cappuccinoMilkRequired;
+
+        boolean coffeeIsEnough = coffeeAmount >= cappuccinoCoffeeRequired;
+
+        if (!isBlocked && coffeeIsEnough && milkIsEnough) {
             System.out.println("Готовим кофе");
         } else {
-           System.out.println("Что-то пошло не так :(");
+            System.out.println("Что-то пошло не так :(");
         }
+    }
+}
+        // 2.5 Приоритеты и скобки в условиях
+        //if (!isBlocked && coffeeAmount >= cappuccinoCoffeeRequired &&
+        //    (skimmedMilkAmount >= cappuccinoMilkRequired ||
+        //    milkAmount >= cappuccinoMilkRequired)) {
+        //    System.out.println("Готовим кофе");
+        //} else {
+        //   System.out.println("Что-то пошло не так :(");
+        //}
 
         //перератор или ||
         //if (skimmedMilkAmount >= cappuccinoMilkRequired ||
@@ -45,5 +57,5 @@ public class Main {
         //} else {
         //    System.out.println("Ингридиентов недостаточно :(");
         //}
-    }
-}
+
+
